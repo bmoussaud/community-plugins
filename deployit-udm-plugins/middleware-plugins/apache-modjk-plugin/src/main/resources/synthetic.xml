@@ -19,7 +19,8 @@
 	      description="Deployed modjk worker settings">
 		<generate-deployable type="www.ApacheModJKWorkerSpec" extends="www.ApacheConfFragmentSpec"/>
 
-		<property name="targets" kind="set_of_ci" referenced-type="generic.Container" required="true"/>
+        <property name="associateTargetsByTags" kind="boolean" default="true" required="false"/>
+        <property name="targets" kind="list_of_ci" referenced-type="generic.Container" required="false"/>
 		<property name="jkstatus" kind="boolean" default="true"/>
 
 		<property name="loadbalancerName" kind="string" default="LB" category="Load Balancer" hidden="true"/>

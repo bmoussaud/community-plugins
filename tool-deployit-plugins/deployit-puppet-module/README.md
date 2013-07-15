@@ -49,3 +49,20 @@ This Puppet module is used to interact with Deployit from Puppet. It supports:
 	  cis => [ 'Environments/env1' ],
 	  ensure => present,
 	}
+
+## Improvements ##
+
+* improve encoding when passing parameters to CLI scripts
+* implement other 'ensure' options (present is implemented, absent not everywhere)
+* use curl and HTTP POST to register CIs in Deployit so the target machine doesn't need Java or the Deployit CLI.
+* starting discovery and storing the result in the repository
+* implement ensure => latest in deployments to get the latest version of a package there
+* registering plugin-specific CIs (e.g. sshhost, tomcat-server, etc)
+
+
+# Integration test
+
+* Setup a brand new instance configured with the file-plugin
+* `run rake spec:integration`
+
+

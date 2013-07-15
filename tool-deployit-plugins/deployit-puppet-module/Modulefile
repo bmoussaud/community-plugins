@@ -1,6 +1,6 @@
 name    'deployit-puppet'
-version '0.0.1'
+version '0.0.3'
 author 'XebiaLabs'
 license 'Apache Software License 2.0'
 summary 'Integrate Puppet with Deployit'
-description 'Puppet module to integrate with Deployit automated deployment tool'
+description 'Puppet module to integrate with Deployit automated deployment tool using the native REST API'

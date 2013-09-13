@@ -20,5 +20,6 @@
         <module>loadbalancer-plugin</module>
         <module>liferay-plugin</module>
         <module>stored-procedures-plugin</module>
+        <module>arcade-plugin</module>
     </modules>
 </project>

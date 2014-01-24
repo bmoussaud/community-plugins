@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.xebialabs.com/deployit/synthetic"
+           xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
+
+    <type-modification type="generic.AbstractDeployed">
+        <property name="restartContainersRequiredForModification" kind="list_of_ci" referenced-type="generic.Container" required="false" description="list of containers that should restart if the deployed is modified." category="Restarter"/>
+    </type-modification>
+
+    <type-modification type="generic.Container">
+        <property name="restartContainersRequiredForModification" kind="list_of_ci" referenced-type="generic.Container" required="false" description="list of containers that should restart if a modified deployed is deployed on it." category="Restarter"/>
+    </type-modification>
+</synthetic>

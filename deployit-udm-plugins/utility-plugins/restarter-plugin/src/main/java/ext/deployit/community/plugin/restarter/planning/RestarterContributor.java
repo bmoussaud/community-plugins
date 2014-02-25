@@ -119,14 +119,18 @@ public class RestarterContributor {
         }
 
         if (deployed instanceof AbstractDeployed) {
-            List<Container> containers = deployed.getProperty("restartContainersRequiredForModification");
-            if (containers == null || containers.isEmpty()) {
-                return;
-            }
+            addContainers(targets, (List<Container>) deployed.getProperty("restartContainersRequiredForModification"));
+            addContainers(targets, (List<Container>) deployed.getContainer().getProperty("restartContainersRequiredForModification"));
+        }
+    }
 
-            for (Container container : containers) {
-                targets.add(getContainerToRestart(container));
-            }
+    private static void addContainers(final Set<BaseGenericContainer> targets, final List<Container> containerFromDeployed) {
+        if (containerFromDeployed == null || containerFromDeployed.isEmpty()) {
+            return;
+        }
+
+        for (Container container : containerFromDeployed) {
+            targets.add(getContainerToRestart(container));
         }
     }
 

@@ -7,6 +7,7 @@ import java.lang.annotation.Target;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.regex.Pattern;
 
 import com.xebialabs.deployit.plugin.api.reflect.PropertyKind;
@@ -44,6 +45,11 @@ public @interface NotMustacheValidator {
             // PropertyKind.LIST_OF_STRING
             else if (pValue instanceof List<?>) {
                 List<String> lList = (List<String>) pValue;
+                for (String lString : lList) {
+                    validateString(lString, pContext);
+                }
+            } else if (pValue instanceof Set<?>) {
+                Set<String> lList = (Set<String>) pValue;
                 for (String lString : lList) {
                     validateString(lString, pContext);
                 }

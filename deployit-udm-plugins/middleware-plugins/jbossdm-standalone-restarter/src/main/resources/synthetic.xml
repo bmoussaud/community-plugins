@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.xebialabs.com/deployit/synthetic"
+           xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
+
+
+    <type-modification type="jbossdm.StandaloneServer">
+        <property name="startCommand" category="LifeCycle" required="false"/>
+        <property name="stopCommand" category="LifeCycle" required="false"/>
+        <property name="startScript" default="jboss/dm/container/start-standalone-server" hidden="true" category="LifeCycle"/>
+        <property name="stopScript" default="jboss/dm/container/stop-standalone-server" hidden="true" category="LifeCycle"/>
+        <property name="startOrder" default="90" kind="integer" hidden="true" category="LifeCycle"/>
+        <property name="stopOrder" default="88" kind="integer" hidden="true" category="LifeCycle"/>
+        <property name="startWaitTime" default="10" kind="integer" hidden="true" category="LifeCycle"/>
+        <property name="stopWaitTime" default="0" kind="integer" hidden="true" category="LifeCycle"/>
+
+        <property name="startShellTaskScript" hidden="true" default="jboss/dm/container/start-standalone-server"/>
+        <property name="stopShellTaskScript" hidden="true" default="jboss/dm/container/stop-standalone-server"/>
+        <method name="start"/>
+        <method name="stop"/>
+    </type-modification>
+
+    <type-modification type="jbossdm.CliManagedDeployed">
+        <property name="restartRequired" default="false" kind="boolean" required="false" category="LifeCycle"/>
+        <property name="restartRequiredForNoop" default="false" kind="boolean" required="false" category="LifeCycle"/>
+    </type-modification>
+
+</synthetic>

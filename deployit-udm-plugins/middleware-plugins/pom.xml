@@ -22,5 +22,6 @@
         <module>liferay-plugin</module>
         <module>stored-procedures-plugin</module>
         <module>iseries-plugin</module>
+        <module>jbossdm-standalone-restarter</module>
     </modules>
 </project>
